@@ -21,15 +21,15 @@ router.get('/produtos/:id', (req, res) => {
 })
 
 //exemplo usando dois parâmetros da requisição
-router.get('/clientes/:id/:name', (req, res) => {
+router.get('/clientes/:id/:name', (req, res, next) => {
     res.json({ id: req.params.id, name: req.params.name })
 })
 
-router.post('/produtos', (req, res) => {
+router.post('/produtos', (req, res, next) => {
     res.send('<h1>Novo cliente</h1>')
 })
 
-router.use((req, res) => {
+router.use((req, res, next) => {
     res.send('<h1>Página do Router</h1>')
 })
 
